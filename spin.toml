@@ -1,0 +1,15 @@
+spin_manifest_version = 2
+
+[application]
+name = "spin-hello-zig"
+version = "0.1.0"
+authors = ["Fermyon Engineering <engineering@fermyon.com>"]
+description = "spin-hello-zig"
+
+[[trigger.http]]
+route = "/..."
+executor = { type = "wagi" } # Note: We are running this using the Wagi spec
+component = "spin-hello-zig"
+
+[component.spin-hello-zig]
+source = "main.wasm"
